@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<h1 align="center">Login</h1>
+	<h1>Login</h1>
 	<div id="LoginForm">
 		<form action="login" method="POST"> 
 			<fieldset>
