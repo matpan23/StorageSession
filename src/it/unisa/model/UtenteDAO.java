@@ -9,5 +9,7 @@ public interface UtenteDAO {
     public int deleteUser(UtenteBean user) throws SQLException; // delete utente
 
     public UtenteBean findByCred(String email, String password) throws SQLException; // utente con le credenziali
+    
+    public UtenteBean findByEmail(String email) throws SQLException;
 
 }

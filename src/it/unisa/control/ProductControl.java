@@ -31,7 +31,6 @@ public class ProductControl extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		String sort = request.getParameter("sort");
 
 		try {

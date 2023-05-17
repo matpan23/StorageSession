@@ -5,17 +5,12 @@
 		response.sendRedirect("./product");	
 		return;
 	}
-	String user;
-	if(request.getSession().getAttribute("utente")==null)
-		response.sendRedirect("LoginView.jsp");
-	else
-		user = (String) request.getSession().getAttribute("utente");
 	ProductBean product = (ProductBean) request.getAttribute("product");
 %>
 
 <!DOCTYPE html>
 <html>
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.ProductBean,it.unisa.model.Cart,it.unisa.model.UtenteBean"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.ProductBean,it.unisa.model.Cart,it.unisa.model.UtenteBean,it.unisa.control.RegistrationControl,it.unisa.model.UtenteDAOImplementazione"%>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

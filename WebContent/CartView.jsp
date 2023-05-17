@@ -17,7 +17,7 @@
 <body>
 	<div id="cart">
   		<h2>Carrello</h2>
-  		<table>
+  		<table border="1">
     	<thead>
       		<tr>
         		<th>Prodotto</th>
@@ -44,7 +44,15 @@
     	</tbody>
   		</table>
   		<p>Totale: <span class="total-price"><%=price%></span></p>
-  		<button class="checkout-btn">Checkout</button>
+  		<% if(request.getAttribute("username")==null){ %>
+  		<form action="LoginView.jsp">
+  			<button class="checkout-btn">Checkout</button>
+  		</form>
+  		<% }else{ %>
+  		<form action="PayView.jsp">
+  			<button class="checkout-btn">Checkout</button>
+  		</form>
+  		<% } %>
   		<p><a href="product">Torna al catalogo</a></p>
 	</div>
 </body>

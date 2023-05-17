@@ -13,10 +13,10 @@
 <body>
 	<h1>Login</h1>
 	<div id="LoginForm">
-		<form action="login" method="POST"> 
+		<form action="login" method="POST">
 			<fieldset>
      			<legend>Login</legend>
-     			<label for="username">Login</label>
+     			<label for="username">Email</label>
      			<input id="username" type="text" name="username" placeholder="enter login">
      			<br>
      			<label for="password">Password</label>
@@ -28,5 +28,14 @@
 		</form>
     </div>
     <br>
+    <br>
+    <h3>Non sei Registrato?</h3><h3>Registrati qui</h3>
+    	<div id="RegistrationForm">
+    		<form action="RegistrationView.jsp">
+    			<fieldset>
+    				<button type="submit" class="registraion-btn">Registrati Ora!</button>
+    			</fieldset>
+    		</form>
+    	</div>
 </body>
 </html>
