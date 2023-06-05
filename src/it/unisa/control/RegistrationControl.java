@@ -26,9 +26,6 @@ public class RegistrationControl extends HttpServlet {
 		String email = (String) request.getParameter("email");
 		String nome = (String) request.getParameter("nome");
 		String cognome = (String) request.getParameter("cognome");
-		String numCarta = (String) request.getParameter("numCarta");
-		String dataScad = (String) request.getParameter("dataScadenza");
-		String cvc = (String) request.getParameter("cvc");
 		String indirizzo = (String) request.getParameter("indirizzo");
 		String citta = (String) request.getParameter("citta");
 		String provincia = (String) request.getParameter("provincia");
@@ -50,9 +47,6 @@ public class RegistrationControl extends HttpServlet {
 			cSession.setAttribute("email", email);
 			cSession.setAttribute("nome",nome);
 			cSession.setAttribute("cognome",cognome);
-			cSession.setAttribute("numCarta",numCarta);
-			cSession.setAttribute("dataScadenza",dataScad);
-			cSession.setAttribute("cvc",cvc);
 			cSession.setAttribute("indirizzo",indirizzo);
 			cSession.setAttribute("citta",citta);
 			cSession.setAttribute("provincia",provincia);
@@ -62,9 +56,6 @@ public class RegistrationControl extends HttpServlet {
 			user.setEmail(email);
 			user.setNome(nome);
 			user.setCognome(cognome);
-			user.setNumCarta(numCarta);
-			user.setDataScad(dataScad);
-			user.setCvc(cvc);
 			user.setIndirizzo(indirizzo);
 			user.setCitta(citta);
 			user.setProvincia(provincia);

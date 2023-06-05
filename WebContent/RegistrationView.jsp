@@ -8,42 +8,61 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="RegistrationStyle.css" rel="stylesheet" type="text/css">
 	<title>YourBackPack</title>
+	<script src="Registration.js"></script>
 </head>
 
 <body>
-	<h1>Registrazione</h1>
-		<div id="RegistrationForm">
-			<form action="registration" method="POST">
-				<label for="email">Email</label>
-          		<input id="email" type="text" name="email" placeholder="Email">
-          		<br>
-        		<label for="nome">Nome</label>
-          		<input id="nome" type="text" name="nome" placeholder="Nome">
-          		<br>
-        		<label for="cognome">Cognome</label>
-		        <input id="cognome" type="text" name="cognome" placeholder="Cognome">
-		    	<br>
-		    	<label for="indirizzo">Indirizzo</label>
-		        <input id="indirizzo" type="text" name="indirizzo" placeholder="Indirizzo">
-		    	<br>
-		    	<label for="citta">Città</label>
-		        <input id="citta" type="text" name="citta" placeholder="Città">
-		    	<br>
-		    	<label for="provincia">Provincia</label>
-		        <input id="provincia" type="text" name="provincia" placeholder="Provincia">
-		    	<br>
-		    	<label for="cap">Cap</label>
-		        <input id="cap" type="text" name="cap" placeholder="Cap">
-		    	<br>
-		    	<label for="password">Password</label>
-		        <input id="password" type="password" name="password" placeholder="Password">
-				<br>
-				<button type="submit" class="reg-btn">Registrazione</button>
-			</form>
-		</div>
-		<br>
-		<form action="product" method="POST">
-			<button type="submit" class="back-btn">Catalogo</button>
-		</form>
+	<div class="container">
+      <h1 class="label">Registrazione utente</h1>
+      <form class="login_form" name='registration' onSubmit="return formRegValidation()" action="registration" method="POST">
+        
+
+        <div class="font">Email</div>
+        <input type="text" name="email" id="email" placeholder="Email">
+        <div id="email_error1">Non può esssere vuoto</div>
+        <div id="email_error2">Email non valida</div>
+
+
+        <div class="font">Nome</div>
+        <input type="text" name="nome" id="nome" placeholder="Nome">
+        <div id="nome_error1">Non può esssere vuoto</div>
+        <div id="nome_error2">Nome deve contenere solo lettere</div>
+       
+        <div class="font">Cognome</div>
+        <input type="text" name="cognome" id="cognome" placeholder="Cognome">
+        <div id="cognome_error1">Non può esssere vuoto</div>
+        <div id="cognome_error2">Cognome deve contenere solo lettere</div>
+
+
+        <div class="font">Indirizzo</div>
+        <input type="text" name="indirizzo" id="indirizzo" placeholder="Indirizzo">
+        <div id="indirizzo_error1">Non può esssere vuoto</div>
+
+
+        <div class="font">Città</div>
+        <input type="text" name="citta" id="citta" placeholder="Città">
+        <div id="citta_error1">Non può esssere vuoto</div>
+        <div id="citta_error2">Città deve contenere solo lettere</div>
+        
+        <div class="font">Provincia</div>
+        <input type="text" name="provincia" id="provincia" placeholder="Provincia">
+        <div id="provincia_error1">Non può esssere vuotoa</div>
+        <div id="provincia_error2">Provincia deve contenere solo lettere</div>
+        
+        <div class="font">Cap</div>
+        <input type="text" name="cap" id="cap" placeholder="Cap">
+        <div id="cap_error1">Non può esssere vuoto</div>
+        <div id="cap_error2">Cap deve contenere solo numeri</div>
+
+        <div class="font">Password</div>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <div id="password_error1">Non può esssere vuoto</div>
+        <button type="submit">Conferma</button>
+      </form>
+      <form action="product" method="POST" class="login_form">
+			<button type="submit">Torna al catalogo</button>
+	 </form>
+    </div>
+   
 	</body>
 </html>

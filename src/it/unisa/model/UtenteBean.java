@@ -5,9 +5,6 @@ public class UtenteBean{
 	private String email;
 	private String nome;
 	private String cognome;
-	private String numCarta;
-	private String dataScad;
-	private String cvc;
 	private String indirizzo;
 	private String citta;
 	private String provincia;
@@ -41,29 +38,6 @@ public class UtenteBean{
 		return cognome;
 	}
 	
-	public String getNumCarta() {
-		return numCarta;
-	}
-	
-	public void setNumCarta(String numCarta) {
-		this.numCarta = numCarta;
-	}
-	
-	public String getDataScad() {
-		return dataScad;
-	}
-	
-	public void setDataScad(String dataScad) {
-		this.dataScad = dataScad;
-	}
-	
-	public String getCvc() {
-		return cvc;
-	}
-	
-	public void setCvc(String cvc) {
-		this.cvc = cvc;
-	}
 	
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo=indirizzo;
@@ -107,6 +81,6 @@ public class UtenteBean{
 
 	@Override 
     public String toString() {
-    	return email + "" +nome +""+ cognome+""+ numCarta+""+ dataScad+""+ cvc+""+ indirizzo+""+ citta+""+""+ provincia+""+ cap;
+    	return email + "" +nome +""+ cognome+""+ indirizzo+""+ citta+""+""+ provincia+""+ cap;
     }
 }

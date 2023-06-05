@@ -16,7 +16,7 @@ public class UtenteDAOImplementazione implements UtenteDAO {
         int result;
 
         String insertSQL = "INSERT INTO " + UtenteDAOImplementazione.TABLE
-                           + " (email, nome, cognome, numCarta, dataScadenza, cvc, indirizzo, citta, provincia, cap, password) "
+                           + " (email, nome, cognome,indirizzo, citta, provincia, cap, password) "
                            + " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
@@ -26,14 +26,11 @@ public class UtenteDAOImplementazione implements UtenteDAO {
             preparedStatement.setString(1, user.getEmail());
             preparedStatement.setString(2, user.getNome());
             preparedStatement.setString(3, user.getCognome());
-            preparedStatement.setString(4, user.getNumCarta());
-            preparedStatement.setString(5, user.getDataScad());
-            preparedStatement.setString(6, user.getCvc());
-            preparedStatement.setString(7, user.getIndirizzo());
-            preparedStatement.setString(8, user.getCitta());
-            preparedStatement.setString(9, user.getProvincia());
-            preparedStatement.setString(10, user.getCap());
-            preparedStatement.setString(11, user.getPassword());
+            preparedStatement.setString(4, user.getIndirizzo());
+            preparedStatement.setString(5, user.getCitta());
+            preparedStatement.setString(6, user.getProvincia());
+            preparedStatement.setString(7, user.getCap());
+            preparedStatement.setString(8, user.getPassword());
             
             result = preparedStatement.executeUpdate();
             
@@ -113,9 +110,6 @@ public class UtenteDAOImplementazione implements UtenteDAO {
                 user.setEmail(rs.getString("email"));
                 user.setNome(rs.getString("nome"));
                 user.setCognome(rs.getString("cognome"));
-                user.setNumCarta(rs.getString("numCarta"));
-                user.setDataScad(rs.getString("dataScadenza"));
-                user.setCvc(rs.getString("cvc"));
                 user.setIndirizzo(rs.getString("indirizzo"));
                 user.setCitta(rs.getString("citta"));
                 user.setProvincia(rs.getString("provincia"));
@@ -157,9 +151,6 @@ public class UtenteDAOImplementazione implements UtenteDAO {
                 user.setEmail(rs.getString("email"));
                 user.setNome(rs.getString("nome"));
                 user.setCognome(rs.getString("cognome"));
-                user.setNumCarta(rs.getString("numCarta"));
-                user.setDataScad(rs.getString("dataScadenza"));
-                user.setCvc(rs.getString("cvc"));
                 user.setIndirizzo(rs.getString("indirizzo"));
                 user.setCitta(rs.getString("citta"));
                 user.setProvincia(rs.getString("provincia"));

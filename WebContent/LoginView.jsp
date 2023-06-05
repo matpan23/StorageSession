@@ -8,34 +8,25 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="LoginStyle.css" rel="stylesheet" type="text/css">
 	<title>YourBackPack</title>
+	<script src="Login.js"></script>
 </head>
 
 <body>
-	<h1>Login</h1>
-	<div id="LoginForm">
-		<form action="login" method="POST">
-			<fieldset>
-     			<legend>Login</legend>
-     			<label for="username">Email</label>
-     			<input id="username" type="text" name="username" placeholder="enter login">
-     			<br>
-     			<label for="password">Password</label>
-     			<input id="password" type="password" name="password" placeholder="enter password">
-     			<br>
-     			<button type="submit" class="login-btn">Login</button>
-     			<button type="reset" class="reset-btn">Reset</button>
-			</fieldset>
-		</form>
-    </div>
-    <br>
-    <br>
-    <h3>Non sei Registrato?</h3><h3>Registrati qui</h3>
-    	<div id="RegistrationForm">
-    		<form action="RegistrationView.jsp">
-    			<fieldset>
-    				<button type="submit" class="registraion-btn">Registrati Ora!</button>
-    			</fieldset>
-    		</form>
-    	</div>
+	 <div class="container">
+      <h1 class="label">Login utente</h1>
+      <form class="login_form" name='registration' action="login" method="POST" onSubmit="return formValidation()">
+        <div class="font">Email</div>
+        <input type="text" name="email">
+        <div id="email_error1">Inserire l'email</div>
+        <div id="email_error2">Email non valida</div>
+        <div class="font2">Password</div>
+        <input type="password" name="password">
+        <div id="password_error">Inserisci la password</div>
+        <button type="submit">Login</button>
+      </form>
+     <div class="reg">
+       <p> Non hai un account?</p><a href="RegistrationView.jsp" class="reg-link"> Registrati </a>
+     </div>
+     </div>
 </body>
 </html>

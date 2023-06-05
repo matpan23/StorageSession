@@ -15,27 +15,46 @@
 	<title>YourBackPack</title>
 </head>
 <body>
-	<div id="details">
-  		<h2>Dettagli</h2>
-  		<table>
-    	<thead>
+	 <div class="titolo">
+ 	 <p class="nomeSito">Dettagli prodotto</p> 
+ 	 </div>
+  		
+  		
+  		
+  		
+  		
+  		
+  		
+     <table border="1">
+
+    	
       		<tr>
-      			<th>Codice_Prodotto</th>
-        		<th>Prodotto</th>
+        		<th><%=product.getName()%></th>
         		<th>Descrizione</th>
       		</tr>
-    	</thead>
-    	<tbody>
-				<tr>
-					<td><%=product.getCode()%>
-					<td><%=product.getName()%></td>
-					<td><%=product.getDescription()%></td>
-				</tr>
-    	</tbody>
-  		</table>
-  		<img src="C:\Users\matte\OneDrive\Desktop\UNISA\TSW\storagesession ok\StorageSession\WebContent\img<%=product.getCode()%>.jpg" alt="Zaino" class="img">
-  		<p><a href="product">Torna al catalogo</a></p>
-  		<a href="cart?action=addC&id=<%=product.getCode()%>">Add to cart</a>
-	</div>
+    	
+
+    	
+			<tr>
+				<td><img src="C:\Users\Utente\Desktop\StorageSession\WebContent\img<%=product.getCode()%>.jpg"></td>
+				<td><%=product.getDescription()%>  </td>	
+			</tr>
+    	
+
+  	 </table>
+  	 
+  	 
+  	   <br>
+	   <br>
+	   <h2> Prezzo:<%=product.getPrice()%></h2>
+	   <br>
+	   
+      <a href="product">Torna al carrello</a>
+	  
+	  <br>
+	  <br>
+	  
+      <a href="cart?action=addC&id=<%=product.getCode()%>">Aggiungi al carrello</a>
+  		
 </body>
 </html>

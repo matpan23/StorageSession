@@ -16,13 +16,17 @@
 </head>
 <body>
 	<div id="cart">
-  		<h2>Carrello</h2>
-  		<table border="1">
+  		<div class="titolo">
+			<p class="nomeSito">Carrello</p> 
+		</div>
+  		<table>
     	<thead>
       		<tr>
         		<th>Prodotto</th>
         		<th>Quantità</th>
         		<th>Prezzo</th>
+        		<th></th>
+				<th></th>
       		</tr>
     	</thead>
     	<tbody>

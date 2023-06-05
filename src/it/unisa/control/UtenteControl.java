@@ -26,7 +26,7 @@ public class UtenteControl extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email =(String) request.getParameter("username");
+		String email =(String) request.getParameter("email");
 		String psw =(String) request.getParameter("password");
 		UtenteBean user = null;
 		try {
@@ -43,12 +43,13 @@ public class UtenteControl extends HttpServlet {
 				session.invalidate();
 			HttpSession cSession=request.getSession();
 			cSession.setAttribute("cart", cart);
-			cSession.setAttribute("utente",email);
+			cSession.setAttribute("email",email);
 			cSession.setAttribute("password", psw);
 			response.sendRedirect("ProductView.jsp");
 		}
-		else
+		else {
 			response.sendRedirect("LoginView.jsp");
+		}
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
