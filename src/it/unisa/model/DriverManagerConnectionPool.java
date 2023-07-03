@@ -30,8 +30,11 @@ public class DriverManagerConnectionPool  {
 		try {
 		newConnection = DriverManager.getConnection("jdbc:mysql://"+ ip+":"+ port+"/"+db+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", username, password);
 		} catch(Exception e) {
-			
+		    System.out.println("No count");
+		} finally {
+		    System.out.println("In finally");
 		}
+		
 		newConnection.setAutoCommit(false);
 		return newConnection;
 	}
