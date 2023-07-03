@@ -10,7 +10,7 @@ CREATE TABLE product (
   description varchar(800),
   price int default 0,
   quantity int default 0,
-  nome_file char(100)
+  nome_file VARCHAR2(100)
 );
 
 INSERT INTO product values (1,"Zaino All-in-one","Il nostro iconico zaino,puoi trasportare i tuoi oggetti essenziali quotidiani in una maniera più comoda ed efficiente.",88,50,"img1");
