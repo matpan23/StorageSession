@@ -48,7 +48,7 @@
     	</tbody>
   		</table>
   		<p>Totale: <span class="total-price"><%=price%></span></p>
-  		<% if(request.getAttribute("username")==null){ %>
+  		<% if(request.getSession().getAttribute("email")==null){ %>
   		<form action="LoginView.jsp">
   			<button class="checkout-btn">Checkout</button>
   		</form>
