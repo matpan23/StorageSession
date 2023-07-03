@@ -9,7 +9,7 @@
 %>
 
 <!DOCTYPE html>
-<html>
+<html lang="IT">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.ProductBean,it.unisa.model.Cart,it.unisa.model.UtenteBean,it.unisa.control.RegistrationControl,it.unisa.model.UtenteDAOImplementazione"%>
 
 <head>
@@ -22,6 +22,7 @@
 	<h2>Products 🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒🎒<a href="cart"><img src="C:\Users\matte\OneDrive\Desktop\UNISA\TSW\storagesession ok\StorageSession\WebContent\cart.jpg" alt="Carrello"></a>
 	<a href="LoginView.jsp"><img src="C:\Users\matte\OneDrive\Desktop\UNISA\TSW\storagesession ok\StorageSession\WebContent\login.jpg" alt="Login"></a></h2>
 	<table border="1">
+	<caption>product table</caption>
 		<tr>
 			<th>Code <a href="product?sort=code">Sort</a></th>
 			<th>Name <a href="product?sort=name">Sort</a></th>
@@ -38,7 +39,7 @@
 		<tr>
 			<td><%=bean.getCode()%></td>
 			<td><%=bean.getName()%></td>
-			<td><img src="C:\Users\matte\OneDrive\Desktop\UNISA\TSW\storagesession ok\StorageSession\WebContent\img<%=bean.getCode()%>.jpg">
+			<td><img src="C:\Users\matte\OneDrive\Desktop\UNISA\TSW\storagesession ok\StorageSession\WebContent\img<%=bean.getCode()%>.jpg" alt="bean">
 			<td><%=bean.getDescription()%></td>
 			<td><a href="product?action=delete&id=<%=bean.getCode()%>">Delete</a><br>
 				<a href="details?action=read&id=<%=bean.getCode()%>">Details</a><br>

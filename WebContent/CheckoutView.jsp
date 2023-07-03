@@ -16,7 +16,7 @@
 	Cart cart = (Cart) request.getSession().getAttribute("cart");
 %>
 <!DOCTYPE html>
-<html>
+<html lang="IT">
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.model.ProductBean,it.unisa.model.Cart,it.unisa.model.UtenteBean,it.unisa.control.RegistrationControl,it.unisa.model.UtenteDAOImplementazione"%>
 
 <head>
@@ -35,6 +35,7 @@
 			<a href="product">Torna al Catalogo</a>
 	<% } %>
 	<table border="1">
+		<caption>product table</caption>
 		<thead>
 			<tr>
 				<th>Prodotto</th>

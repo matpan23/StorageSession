@@ -20,6 +20,7 @@
 			<p class="nomeSito">Carrello</p> 
 		</div>
   		<table>
+  		<caption>Product table</caption>
     	<thead>
       		<tr>
         		<th>Prodotto</th>
