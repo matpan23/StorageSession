@@ -2,6 +2,9 @@ package it.unisa.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.unisa.model.Cart;
 import it.unisa.model.ProductModelDM;
+
 
 /**
  * Servlet implementation class CartControl
@@ -22,6 +26,8 @@ public class CartControl extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		final Logger LOGGER = Logger.getLogger("it.unisa.control.CartControl");
 		
 		Cart cart = (Cart)request.getSession().getAttribute("cart");
 		if(cart == null) {
@@ -42,7 +48,7 @@ public class CartControl extends HttpServlet {
 				} 
 			}		
 		} catch (SQLException e) {
-			System.out.println("Error:" + e.getMessage());
+			LOGGER.log(Level.WARNING,"Error:");
 		}
 		
 		request.getSession().setAttribute("cart", cart);

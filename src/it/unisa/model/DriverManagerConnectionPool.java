@@ -8,7 +8,7 @@ import java.util.List;
 
 public class DriverManagerConnectionPool  {
 	
-	public DriverManagerConnectionPool(){
+	public DriverManagerConnectionPool(){ //Costruttore vuoto
 		
 	}
 
