@@ -118,7 +118,7 @@ public class ProductModelDM implements ProductModel {
 
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
-			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement = connection.prepareStatement(selectSQL); //Sensitive
 
 			ResultSet rs = preparedStatement.executeQuery();
 
