@@ -19,7 +19,7 @@ import it.unisa.model.UtenteDAOImplementazione;
 @WebServlet("/card")
 public class CardControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private static UtenteDAOImplementazione CardDm=new UtenteDAOImplementazione();
+    private static UtenteDAOImplementazione Card=new UtenteDAOImplementazione();
     
     public CardControl() {
         super();
@@ -35,7 +35,7 @@ public class CardControl extends HttpServlet {
         
         try {
         	
-        	user = CardDm.findByEmail(email);
+        	user = Card.findByEmail(email);
         	
         }catch (SQLException e) {
 			e.printStackTrace();	
