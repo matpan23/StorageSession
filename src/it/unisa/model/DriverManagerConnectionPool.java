@@ -25,16 +25,9 @@ public class DriverManagerConnectionPool  {
 		String port = "3306";
 		String db = "storage";
 		String username = "root";
-		String password = "Unisaebello3!";
+		String password = System.getenv("SECRET");
 		
-		try {
 		newConnection = DriverManager.getConnection("jdbc:mysql://"+ ip+":"+ port+"/"+db+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", username, password);
-		} catch(Exception e) {
-		    System.out.println("No count");
-		} finally {
-		    System.out.println("In finally");
-		}
-		
 		newConnection.setAutoCommit(false);
 		return newConnection;
 	}

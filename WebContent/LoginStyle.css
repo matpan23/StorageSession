@@ -73,21 +73,9 @@ body{
     border: 1px solid #3949AB;
     transition: .5s;
 }
-
-
-
-
-
 .login_form button:hover{
     background: #3d427b;
 }
-
-
-
-
-
-
-
 .login_form #email_error1{
     margin-top: 5px;
     width:350px;
