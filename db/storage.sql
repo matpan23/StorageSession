@@ -6,8 +6,8 @@ DROP TABLE IF EXISTS product;
 
 CREATE TABLE product (	
   code int primary key,
-  name varchar(200) not null,
-  description varchar(800),
+  name VARCHAR2(200) not null,
+  description VARCHAR2(800),
   price int default 0,
   quantity int default 0,
   nome_file VARCHAR2(100)
