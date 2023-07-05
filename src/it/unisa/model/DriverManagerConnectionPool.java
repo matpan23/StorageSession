@@ -24,10 +24,10 @@ public class DriverManagerConnectionPool  {
 		String ip = "localhost";
 		String port = "3306";
 		String db = "storage";
-		String username = "root";
-		String password = System.getenv("SECRET");
+		String DB_USR = "root";
+		String DB_PSW = System.getenv("SECRET");
 		
-		newConnection = DriverManager.getConnection("jdbc:mysql://"+ ip+":"+ port+"/"+db+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", username, password);
+		newConnection = DriverManager.getConnection("jdbc:mysql://"+ ip+":"+ port+"/"+db+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", DB_USR, DB_PSW);
 		newConnection.setAutoCommit(false);
 		return newConnection;
 	}
