@@ -2,6 +2,9 @@ package it.unisa.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +26,9 @@ public class RegistrationControl extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		final Logger LOGGER = Logger.getLogger("it.unisa.control.RegistrationControl");
+		
 		String email = (String) request.getParameter("email");
 		String nome = (String) request.getParameter("nome");
 		String cognome = (String) request.getParameter("cognome");
@@ -35,7 +41,7 @@ public class RegistrationControl extends HttpServlet {
 		
 		try {
 			if((user = userDao.findByEmail(email))!= null ) {
-				System.out.println("Utente già registrato!");
+				LOGGER.log(Level.WARNING,"Utente già registrato!");
 				response.sendRedirect("LoginView.jsp");
 			}
 		} catch (SQLException e) {

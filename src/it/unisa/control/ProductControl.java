@@ -2,6 +2,9 @@ package it.unisa.control;
 
 import java.io.IOException; 
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -31,13 +34,15 @@ public class ProductControl extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		final Logger LOGGER = Logger.getLogger("it.unisa.control.ProductControl");
 		String sort = request.getParameter("sort");
 
 		try {
 			request.removeAttribute("products");
 			request.setAttribute("products", model.doRetrieveAll(sort));
 		} catch (SQLException e) {
-			System.out.println("Error:" + e.getMessage());
+			LOGGER.log(Level.WARNING,"Error:");
 		}
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ProductView.jsp");

@@ -2,6 +2,8 @@ package it.unisa.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,6 +25,8 @@ public class DetailsControl extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		final Logger LOGGER = Logger.getLogger("it.unisa.control.DetailsControl");
+		
 		ProductModelDM model=new ProductModelDM();
 		String action = request.getParameter("action");
 		
@@ -33,7 +37,7 @@ public class DetailsControl extends HttpServlet {
 					request.setAttribute("product", model.doRetrieveByKey(id));
 			}
 		}catch (SQLException e) {
-				System.out.println("error:" + e.getMessage());
+				LOGGER.log(Level.WARNING,"error:");
 		}
 		RequestDispatcher d= getServletContext().getRequestDispatcher("/DetailsView.jsp");
 		d.forward(request, response);
