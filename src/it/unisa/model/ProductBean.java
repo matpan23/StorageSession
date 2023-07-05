@@ -12,7 +12,7 @@ public class ProductBean implements Serializable {
 	int price;
 	int quantity;
 
-	public ProductBean() {
+	public ProductBean() { //Costruttore vuoto
 	}
 
 	public int getCode() {

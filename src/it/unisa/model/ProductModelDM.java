@@ -108,7 +108,7 @@ public class ProductModelDM implements ProductModel {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		Collection<ProductBean> products = new LinkedList<ProductBean>();
+		Collection<ProductBean> products = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + ProductModelDM.TABLE_NAME;
 

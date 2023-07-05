@@ -116,7 +116,7 @@ public class UtenteModelDM implements UtenteModel {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		Collection<UtenteBean> utentes = new LinkedList<UtenteBean>();
+		Collection<UtenteBean> utentes = new LinkedList<>();
 
 		String selectSQL = "SELECT * FROM " + UtenteModelDM.TABLE_NAME;
 

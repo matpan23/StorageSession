@@ -35,9 +35,6 @@ public class DetailsControl extends HttpServlet {
 		}catch (SQLException e) {
 				System.out.println("error:" + e.getMessage());
 		}
-		/*request.getSession().setAttribute("details", det);
-		request.setAttribute("details", det);*/
-		
 		RequestDispatcher d= getServletContext().getRequestDispatcher("/DetailsView.jsp");
 		d.forward(request, response);
 	}

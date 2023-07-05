@@ -11,7 +11,7 @@ public class UtenteBean{
 	private String cap;
 	private String password;
 	
-	public UtenteBean() {
+	public UtenteBean() { //costruttore vuoto
 		
 	}
 	public void setEmail (String email) {

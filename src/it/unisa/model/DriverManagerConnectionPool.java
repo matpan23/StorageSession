@@ -7,11 +7,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DriverManagerConnectionPool  {
+	
+	public DriverManagerConnectionPool(){
+		
+	}
 
 	private static List<Connection> freeDbConnections;
 
 	static {
-		freeDbConnections = new LinkedList<Connection>();
+		freeDbConnections = new LinkedList<>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -24,10 +28,10 @@ public class DriverManagerConnectionPool  {
 		String ip = "localhost";
 		String port = "3306";
 		String db = "storage";
-		String DB_USR = "root";
-		String DB_PSW = System.getenv("SECRET");
+		String dbusr = "root";
+		String dbpsw = System.getenv("SECRET");
 		
-		newConnection = DriverManager.getConnection("jdbc:mysql://"+ ip+":"+ port+"/"+db+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", DB_USR, DB_PSW);
+		newConnection = DriverManager.getConnection("jdbc:mysql://"+ ip+":"+ port+"/"+db+"?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", dbusr, dbpsw);
 		newConnection.setAutoCommit(false);
 		return newConnection;
 	}
@@ -37,7 +41,7 @@ public class DriverManagerConnectionPool  {
 		Connection connection;
 
 		if (!freeDbConnections.isEmpty()) {
-			connection = (Connection) freeDbConnections.get(0);
+			connection = freeDbConnections.get(0);
 			freeDbConnections.remove(0);
 
 			try {
@@ -54,7 +58,7 @@ public class DriverManagerConnectionPool  {
 		return connection;
 	}
 
-	public static synchronized void releaseConnection(Connection connection) throws SQLException {
+	public static synchronized void releaseConnection(Connection connection) {
 		if(connection != null) freeDbConnections.add(connection);
 	}
 }
