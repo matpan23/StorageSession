@@ -20,19 +20,12 @@ import it.unisa.model.UtenteDAOImplementazione;
 public class CardControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private static UtenteDAOImplementazione CardDm=new UtenteDAOImplementazione();
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public CardControl() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String email=(String) request.getParameter("email");
 		String numCarta=(String) request.getParameter("numCarta");
 		String dataScad=(String) request.getParameter("dataScadenza");
@@ -62,7 +55,6 @@ public class CardControl extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doPost(request, response);
 	}
 }
